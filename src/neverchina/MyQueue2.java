@@ -28,9 +28,9 @@ public class MyQueue2 {
 
     public MyQueue2(int initialCapacity){
         if (initialCapacity > MAX_CAPACITY)
-            throw new OutOfMemoryError("initialCapacity too large");
+            throw new OutOfMemoryError("初始容量太大");
         if (initialCapacity <= 0)
-            throw new IndexOutOfBoundsException("initialCapacity must be more than zero");
+            throw new IndexOutOfBoundsException("初始容量必须大于零");
         queue = new Object[initialCapacity];
         capacity = initialCapacity;
         maxIndex = initialCapacity - 1;
@@ -51,7 +51,7 @@ public class MyQueue2 {
      */
     public void push(Object object){
         if (size >= capacity){
-            System.out.println("queue's size more than or equal to array's capacity");
+            System.out.println("队列的大小大于等于数组的容量");
             return;
         }
         if (++tail > maxIndex){
@@ -67,7 +67,7 @@ public class MyQueue2 {
      */
     public Object pop(){
         if (size <= 0){
-            System.out.println("the queue is null");
+            System.out.println("队列为空");
             return null;
         }
         if (++head > maxIndex){
